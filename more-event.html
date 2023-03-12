@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation button</title>
+
+</head>
+<body>
+    <h1 id="hide-text">Explore more event</h1>
+    <input id="detete-confirm" type="text-field" type="text" placeholder="Type detete">
+    <button id="btn-delete" disabled>delete</button>
+    <button id="btn-show" >Show text</button>
+    <script>
+            document.getElementById('detete-confirm').addEventListener('keyup',function(event){
+                const text = event.target.value;
+                const deleteBtn = document.getElementById('btn-delete');
+                if(text === 'delete'){
+                    deleteBtn.removeAttribute('disabled');
+                }
+                else{
+                    deleteBtn.setAttribute('disabled', true);
+                }
+            })
+            document.getElementById('btn-delete').addEventListener('click', function(){
+               
+                    const hide = document.getElementById('hide-text');
+                    hide.style.display ='none';
+            })
+            document.getElementById('btn-show').addEventListener('click', function(){
+             
+                    const hide = document.getElementById('hide-text');
+                    hide.style.display ='block';
+            })
+    </script>
+</body>
+</html>
